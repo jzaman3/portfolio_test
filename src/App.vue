@@ -1,51 +1,44 @@
 <template>
-    <div>
-      <nav>
-        <button @click="scrollToSection('home')">Home</button>
-        <button @click="scrollToSection('projects')">Projects</button>
-        <button @click="scrollToSection('contact')">Contact</button>
-      </nav>
-  
+  <div>
+    <nav class="sidebar">
+      <ul>
+        <li><button @click="scrollToSection('home')">Home</button></li>
+        <li><button @click="scrollToSection('projects')">Projects</button></li>
+        <li><button @click="scrollToSection('contact')">Contact</button></li>
+      </ul>
+    </nav>
+
+    <div class="content">
       <section id="home" ref="home" class="fade">
         <HomeSection />
       </section>
-  
+
       <section id="projects" ref="projects" class="fade">
         <ProjectsSection />
-        <h2>Project List</h2>
-        <p v-if="projectsList.length === 0">No projects available</p>
-        <ul>
-          <li v-for="(project, index) in projectsList" :key="index">{{ project }}</li>
-        </ul>
-        <h3>Number of Projects: {{ projectSummary }}</h3>
       </section>
-  
+
       <section id="contact" ref="contact" class="fade">
         <ContactSection />
       </section>
-  
+
       <div>
         <h2>Visitor Counter</h2>
         <p>Number of visitors (page loads): {{ visitorCount }}</p>
-  
+
         <h2>Click Counter</h2>
         <button @click="incrementCounter">Click Me!</button>
         <p>You have clicked the button {{ counter }} times.</p>
       </div>
-  
+
       <div>
         <button @click="toggleMessage">{{ showMessage ? 'Hide' : 'Show' }} Message</button>
-        <p v-show="showMessage">
-          Hello, you have found the hidden cat!
-        </p>
-        <img v-show="showMessage" src="/src/assets/avatar.jpg" alt="         
-                           ╱|、
-                          (˚ˎ 。7  
-                           |、˜〵          
-                          じしˍ,)ノ" />
+        <p v-show="showMessage">Hello, you have found the hidden cat!</p>
+        <img v-show="showMessage" src="/src/assets/avatar.jpg" alt="Cat" />
       </div>
     </div>
-  </template>
+  </div>
+</template>
+
   
   <script>
   import { ref, computed, onMounted } from 'vue';
@@ -121,14 +114,17 @@
   button {
     padding: 10px;
     cursor: pointer;
+    margin-left: 250px;
   }
   
   p {
     margin-top: 10px;
+    margin-left: 250px;
   }
   
   h2 {
     margin-top: 20px;
+    margin-left: 250px;
   }
   
   p {

@@ -1,17 +1,20 @@
 /* style.css */
 body {
+  background-image: url('/src/assets/mountain.jpg');
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #6b55c5;
-  padding: 10px;
-  z-index: 1000;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #694d99;
+  height: 100%; 
+  position: fixed; 
+  overflow: auto;
 }
 
 nav button {
@@ -22,8 +25,10 @@ nav button {
 
 section {
   padding: 60px 20px;
+  margin-left: 225px;
   min-height: 100vh;
-  scroll-margin-top: 60px; 
+  scroll-margin-top: 60px;
+  overflow: auto;
 }
 
 h1, h2, h3 {
